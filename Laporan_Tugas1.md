@@ -1,12 +1,14 @@
-###**Pendahuluan**
+#**Tugas 1**
 
-###**Dasar Teori**
+##**Pendahuluan**
+
+##**Dasar Teori**
 
 &nbsp;&nbsp; &nbsp; Ubuntu server adalah salah satu varian dari distro linux Ubuntu. Ubuntu server adalah ubuntu yang didesain untuk di install di server. Perbedaan mendasar, di Ubuntu Server tidak tersedia GUI. Jika anda menggunakan ubuntu server artinya anda harus bekerja dengan perintah perintah di layar hitam ayng sering disebut konsole. Jika anda datang dari windows, maka tampilan ubuntu server seperti DOS. Ubuntu server menyediakan platform yang terintegrasi dengan baik yang akan memudahkan anda melakukan deploy server dengan fasilitas layanan internet standar: mail, web, DNS, file-serving hingga manajemen database. Sebagai turunan dari distribusi Debian, karakter alami Ubuntu server yang diwariskan dari Debian adalah faktor keamanan (security). Ubuntu server tidak membiarkan keberadaan port yang terbuka setelah proses instalasi, dan hanya akan memuat software-software yang esensial dan dibutuhkan untuk membangun sebuah sistem server yang aman.
 
-###**Uji Penetrasi 1**
+##**Uji Penetrasi 1**
 
-####**-Instalasi Ubuntu Server.**
+###**-Instalasi Ubuntu Server.**
 
 1. Pastikan VirtualBox telah terinstal di laptop/PC.
 
@@ -263,12 +265,12 @@ $ sudo apt-get install ubuntu-desktop
 $ sudo reboot
 
 
-####**- Instalasi Kali Linux**
+###**- Instalasi Kali Linux**
 
 
 
 
-####**- Instalasi SSH Server**
+###**- Instalasi SSH Server**
 
 1. Login user.
    
@@ -281,7 +283,7 @@ $ sudo reboot
    ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/install%20openssh-server.PNG "Install openssh-server")
    
    
-####**- Langkah Uji Penetrasi dengan Hydra**
+###**- Langkah Uji Penetrasi dengan Hydra**
 
 1. Buat file dictionary untuk uji penetrasi.
 2. Pada terminal ketikkan "`nano pass.txt`".
@@ -292,12 +294,12 @@ $ sudo reboot
    
 5. Untuk memulai uji penetrasi pada terminal ketikkan "`hydra -l ubuntu -P pass.txt 192.168.56.102 ssh`". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
 
-#####**-- Hasil Uji Penetrasi dengan Hydra**
+####**-- Hasil Uji Penetrasi dengan Hydra**
 
    ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/hasil%20hydra.PNG "Hasil Hydra")
 
 
-####**- Langkah Uji Penetrasi dengan Ncrack**
+###**- Langkah Uji Penetrasi dengan Ncrack**
 
 1. Buat file dictionary untuk uji penetrasi.
 2. Pada terminal ketikkan "`nano pass.txt`".
@@ -308,14 +310,14 @@ $ sudo reboot
    
 5. Untuk memulai uji penetrasi pada terminal ketikkan "`ncrack -v 192.168.56.102 --user ubuntu -P pass.txt -p ssh`". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
 
-#####**-- Hasil Uji Penetrasi dengan Ncrack**
+####**-- Hasil Uji Penetrasi dengan Ncrack**
 
    ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/hasil%20ncrack.PNG "Hasil Ncrack")
 
 
-###**Uji Penetrasi 2**
+##**Uji Penetrasi 2**
 
-####**- Langkah Konfigurasi fail2ban**
+###**- Langkah Konfigurasi fail2ban**
 
 1. Install fail2ban. Pada terminal server ketikkan "`sudo apt-get install fail2ban`"
 2. Konfigurasi fail2ban. Pada "bantime" berisi nilai 600 yang artinya klien akan ter-banned ketika gagal autentikasi dengan benar selama 600 detik atau 10 menit. Pada "findtime" berisi nilai 600 dan "maxretry" berisi nilai 3 yang artinya fail2ban akan mem-ban klien yang gagal login 3 kali selama selang waktu 10 menit.
@@ -331,7 +333,7 @@ $ sudo reboot
    ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/restart%20fail2ban.PNG "Restart fail2ban")
    
 
-####**- Langkah Konfigurasi SSH server**
+###**- Langkah Konfigurasi SSH server**
 
 1. Buka file config ssh server. Pada terminal server ketikkan "`sudo nano /etc/ssh/sshd_config`".
 2. Edit config Port agar ssh listen port 22222. Cari config Port lalu ubah nilainya menjadi 22222.
@@ -344,7 +346,7 @@ $ sudo reboot
    ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/service%20ssh%20restart.PNG "Restart SSH server")
 
 
-####**- Langkah Uji Penetrasi dengan Hydra**
+###**- Langkah Uji Penetrasi dengan Hydra**
 
 1. Buat file dictionary untuk uji penetrasi.
 2. Pada terminal ketikkan "`nano pass.txt`".
@@ -355,12 +357,12 @@ $ sudo reboot
    
 5. Untuk memulai uji penetrasi pada terminal ketikkan "`hydra -l ubuntu -P pass.txt 192.168.56.102 ssh`". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
 
-#####**-- Hasil Uji Penetrasi dengan Hydra**
+####**-- Hasil Uji Penetrasi dengan Hydra**
 
    ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/hydra%20fail2ban.PNG "Hasil Hydra dengan fail2ban")
 
 
-####**- Langkah Uji Penetrasi dengan Ncrack**
+###**- Langkah Uji Penetrasi dengan Ncrack**
 
 1. Buat file dictionary untuk uji penetrasi.
 2. Pada terminal ketikkan "`nano pass.txt`".
@@ -371,19 +373,19 @@ $ sudo reboot
    
 5. Untuk memulai uji penetrasi pada terminal ketikkan "`ncrack -v 192.168.56.102 --user ubuntu -P pass.txt -p ssh`". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
 
-#####**-- Hasil Uji Penetrasi dengan Ncrack**
+####**-- Hasil Uji Penetrasi dengan Ncrack**
 
    ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/hasil%20ncrack.PNG "Hasil Ncrack dengan fail2ban")
 
 
-####**- Kesimpulan dan Saran**
+##**- Kesimpulan dan Saran**
 
-#####**-- Kesimpulan**
+###**-- Kesimpulan**
 
 - openSSH-server dapat dihack secara brute force dan banyak tools yang dapat digunakan.
 - fail2ban dapat menangkal serangan brute force.
 
-#####**-- Saran**
+###**-- Saran**
 
 - openSSH-server dapat dikonfigurasi portnya agar lebih aman karena kecil kemungkinan hacker mengetahui port yang digunakan untuk SSH.
 - fail2ban dapat dikonfigurasi maxretry dengan nilai yang kecil untuk menangkal serangan brute force.
