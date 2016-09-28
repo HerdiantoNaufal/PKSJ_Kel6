@@ -284,7 +284,7 @@ $ sudo reboot
 4. Simpan file.
 5. Untuk memulai uji penetrasi pada terminal ketikkan "hydra -l ubuntu -P pass.txt 192.168.56.102 ssh". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
 
-#####**- Hasil Uji Penetrasi dengan Hydra**
+#####**-- Hasil Uji Penetrasi dengan Hydra**
 
 
 
@@ -297,7 +297,7 @@ $ sudo reboot
 4. Simpan file.
 5. Untuk memulai uji penetrasi pada terminal ketikkan "ncrack -v 192.168.56.102 --user ubuntu -P pass.txt -p ssh". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
 
-#####**- Hasil Uji Penetrasi dengan Ncrack**
+#####**-- Hasil Uji Penetrasi dengan Ncrack**
 
 
 
@@ -327,7 +327,7 @@ $ sudo reboot
 4. Simpan file.
 5. Untuk memulai uji penetrasi pada terminal ketikkan "hydra -l ubuntu -P pass.txt 192.168.56.102 ssh". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
 
-#####**- Hasil Uji Penetrasi dengan Hydra**
+#####**-- Hasil Uji Penetrasi dengan Hydra**
 
 
 
@@ -340,19 +340,19 @@ $ sudo reboot
 4. Simpan file.
 5. Untuk memulai uji penetrasi pada terminal ketikkan "ncrack -v 192.168.56.102 --user ubuntu -P pass.txt -p ssh". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
 
-#####**- Hasil Uji Penetrasi dengan Ncrack**
+#####**-- Hasil Uji Penetrasi dengan Ncrack**
 
 
 
 
 ####**- Kesimpulan dan Saran**
 
-#####**- Kesimpulan**
+#####**-- Kesimpulan**
 
 - openSSH-server dapat dihack secara brute force dan banyak tools yang dapat digunakan.
 - fail2ban dapat menangkal serangan brute force.
 
-#####**- Saran**
+#####**-- Saran**
 
 - openSSH-server dapat dikonfigurasi portnya agar lebih aman karena kecil kemungkinan hacker mengetahui port yang digunakan untuk SSH.
 - fail2ban dapat dikonfigurasi maxretry dengan nilai yang kecil untuk menangkal serangan brute force.
