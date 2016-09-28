@@ -6,7 +6,7 @@
 
 ###**Uji Penetrasi 1**
 
-####**- Instalasi Ubuntu Server.**
+####**-Instalasi Ubuntu Server.**
 
 1. Pastikan VirtualBox telah terinstal di laptop/PC.
 
@@ -271,22 +271,30 @@ $ sudo reboot
 ####**- Instalasi SSH Server**
 
 1. Login user.
+   
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/login%20ubuntu%20server.PNG "Login Ubuntu Server")
+
 2. Ketikkan "`sudo apt-get install openssh-server`".
 3. Masukkan password.
 4. Ketik "y" dan tekan enter.
-
-
+   
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/install%20openssh-server.PNG "Install openssh-server")
+   
+   
 ####**- Langkah Uji Penetrasi dengan Hydra**
 
 1. Buat file dictionary untuk uji penetrasi.
 2. Pada terminal ketikkan "`nano pass.txt`".
 3. Isikan kemungkinan-kemungkinan password.
 4. Simpan file.
+   
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/dictionary%20password.PNG "Dictionary Password")
+   
 5. Untuk memulai uji penetrasi pada terminal ketikkan "`hydra -l ubuntu -P pass.txt 192.168.56.102 ssh`". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
 
 #####**-- Hasil Uji Penetrasi dengan Hydra**
 
-
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/hasil%20hydra.PNG "Hasil Hydra")
 
 
 ####**- Langkah Uji Penetrasi dengan Ncrack**
@@ -295,11 +303,14 @@ $ sudo reboot
 2. Pada terminal ketikkan "`nano pass.txt`".
 3. Isikan kemungkinan-kemungkinan password.
 4. Simpan file.
+   
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/dictionary%20password.PNG "Dictionary Password")
+   
 5. Untuk memulai uji penetrasi pada terminal ketikkan "`ncrack -v 192.168.56.102 --user ubuntu -P pass.txt -p ssh`". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
 
 #####**-- Hasil Uji Penetrasi dengan Ncrack**
 
-
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/hasil%20ncrack.PNG "Hasil Ncrack")
 
 
 ###**Uji Penetrasi 2**
@@ -308,15 +319,29 @@ $ sudo reboot
 
 1. Install fail2ban. Pada terminal server ketikkan "`sudo apt-get install fail2ban`"
 2. Konfigurasi fail2ban. Pada "bantime" berisi nilai 600 yang artinya klien akan ter-banned ketika gagal autentikasi dengan benar selama 600 detik atau 10 menit. Pada "findtime" berisi nilai 600 dan "maxretry" berisi nilai 3 yang artinya fail2ban akan mem-ban klien yang gagal login 3 kali selama selang waktu 10 menit.
+
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/config%20fail2ban%20ban.PNG "Config fail2ban")
+
 3. Konfigurasi fail2ban. Pada "action" berisi nilai "$(action_)s"_ yang artinya fail2ban akan mengatur firewall untuk me-reject traffic dari host yang menyerang selama waktu ban berjalan.
-4. Restart
+
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/fail2ban%20setting%201.PNG "Config fail2ban")
+   
+4. Restart fail2ban. Pada terminal server ketikkan "`sudo service fail2ban restart'".
+
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/restart%20fail2ban.PNG "Restart fail2ban")
+   
 
 ####**- Langkah Konfigurasi SSH server**
 
 1. Buka file config ssh server. Pada terminal server ketikkan "`sudo nano /etc/ssh/sshd_config`".
 2. Edit config Port agar ssh listen port 22222. Cari config Port lalu ubah nilainya menjadi 22222.
 3. Simpan file.
+
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/config%20port%20ssh.PNG "Config Port SSH")
+
 4. Restart SSH server. Pada terminal server ketikkan "`sudo service ssh restart`".
+
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/service%20ssh%20restart.PNG "Restart SSH server")
 
 
 ####**- Langkah Uji Penetrasi dengan Hydra**
@@ -325,11 +350,14 @@ $ sudo reboot
 2. Pada terminal ketikkan "`nano pass.txt`".
 3. Isikan kemungkinan-kemungkinan password.
 4. Simpan file.
+   
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/dictionary%20password.PNG "Dictionary Password")
+   
 5. Untuk memulai uji penetrasi pada terminal ketikkan "`hydra -l ubuntu -P pass.txt 192.168.56.102 ssh`". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
 
 #####**-- Hasil Uji Penetrasi dengan Hydra**
 
-
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/hydra%20fail2ban.PNG "Hasil Hydra dengan fail2ban")
 
 
 ####**- Langkah Uji Penetrasi dengan Ncrack**
@@ -338,11 +366,14 @@ $ sudo reboot
 2. Pada terminal ketikkan "`nano pass.txt`".
 3. Isikan kemungkinan-kemungkinan password.
 4. Simpan file.
+   
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/dictionary%20password.PNG "Dictionary Password")
+   
 5. Untuk memulai uji penetrasi pada terminal ketikkan "`ncrack -v 192.168.56.102 --user ubuntu -P pass.txt -p ssh`". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
 
 #####**-- Hasil Uji Penetrasi dengan Ncrack**
 
-
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/hasil%20ncrack.PNG "Hasil Ncrack dengan fail2ban")
 
 
 ####**- Kesimpulan dan Saran**
