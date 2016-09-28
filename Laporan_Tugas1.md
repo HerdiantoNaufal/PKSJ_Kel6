@@ -261,3 +261,98 @@ $ sudo apt-get upgrade
 $ sudo apt-get install ubuntu-desktop
 
 $ sudo reboot
+
+
+####**- Instalasi Kali Linux**
+
+
+
+
+####**- Instalasi SSH Server**
+
+1. Login user.
+2. Ketikkan "sudo apt-get install openssh-server".
+3. Masukkan password.
+4. Ketik "y" dan tekan enter.
+
+
+####**- Langkah Uji Penetrasi dengan Hydra**
+
+1. Buat file dictionary untuk uji penetrasi.
+2. Pada terminal ketikkan "nano pass.txt".
+3. Isikan kemungkinan-kemungkinan password.
+4. Simpan file.
+5. Untuk memulai uji penetrasi pada terminal ketikkan "hydra -l ubuntu -P pass.txt 192.168.56.102 ssh". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
+
+#####**- Hasil Uji Penetrasi dengan Hydra**
+
+
+
+
+####**- Langkah Uji Penetrasi dengan Ncrack**
+
+1. Buat file dictionary untuk uji penetrasi.
+2. Pada terminal ketikkan "nano pass.txt".
+3. Isikan kemungkinan-kemungkinan password.
+4. Simpan file.
+5. Untuk memulai uji penetrasi pada terminal ketikkan "ncrack -v 192.168.56.102 --user ubuntu -P pass.txt -p ssh". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
+
+#####**- Hasil Uji Penetrasi dengan Ncrack**
+
+
+
+
+###**Uji Penetrasi 2**
+
+####**- Langkah Konfigurasi fail2ban**
+
+1. Install fail2ban. Pada terminal server ketikkan "sudo apt-get install fail2ban"
+2. Konfigurasi fail2ban. Pada "bantime" berisi nilai 600 yang artinya klien akan ter-banned ketika gagal autentikasi dengan benar selama 600 detik atau 10 menit. Pada "findtime" berisi nilai 600 dan "maxretry" berisi nilai 3 yang artinya fail2ban akan mem-ban klien yang gagal login 3 kali selama selang waktu 10 menit.
+3. Konfigurasi fail2ban. Pada "action" berisi nilai "$(action_)s"_ yang artinya fail2ban akan mengatur firewall untuk me-reject traffic dari host yang menyerang selama waktu ban berjalan.
+4. Restart
+
+####**- Langkah Konfigurasi SSH server**
+
+1. Buka file config ssh server. Pada terminal server ketikkan "sudo nano /etc/ssh/sshd_config".
+2. Edit config Port agar ssh listen port 22222. Cari config Port lalu ubah nilainya menjadi 22222.
+3. Simpan file.
+4. Restart SSH server. Pada terminal server ketikkan "sudo service ssh restart".
+
+
+####**- Langkah Uji Penetrasi dengan Hydra**
+
+1. Buat file dictionary untuk uji penetrasi.
+2. Pada terminal ketikkan "nano pass.txt".
+3. Isikan kemungkinan-kemungkinan password.
+4. Simpan file.
+5. Untuk memulai uji penetrasi pada terminal ketikkan "hydra -l ubuntu -P pass.txt 192.168.56.102 ssh". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
+
+#####**- Hasil Uji Penetrasi dengan Hydra**
+
+
+
+
+####**- Langkah Uji Penetrasi dengan Ncrack**
+
+1. Buat file dictionary untuk uji penetrasi.
+2. Pada terminal ketikkan "nano pass.txt".
+3. Isikan kemungkinan-kemungkinan password.
+4. Simpan file.
+5. Untuk memulai uji penetrasi pada terminal ketikkan "ncrack -v 192.168.56.102 --user ubuntu -P pass.txt -p ssh". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
+
+#####**- Hasil Uji Penetrasi dengan Ncrack**
+
+
+
+
+####**- Kesimpulan dan Saran**
+
+#####**- Kesimpulan**
+
+- openSSH-server dapat dihack secara brute force dan banyak tools yang dapat digunakan.
+- fail2ban dapat menangkal serangan brute force.
+
+#####**- Saran**
+
+- openSSH-server dapat dikonfigurasi portnya agar lebih aman karena kecil kemungkinan hacker mengetahui port yang digunakan untuk SSH.
+- fail2ban dapat dikonfigurasi maxretry dengan nilai yang kecil untuk menangkal serangan brute force.
