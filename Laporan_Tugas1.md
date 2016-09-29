@@ -2,6 +2,14 @@
 
 ##**Pendahuluan**
 
+&nbsp;&nbsp; &nbsp; Keamanan jaringan komputer sebagai bagian dari sebuah sistem sangat penting untuk menjaga validitas dan integritas data serta menjamin ketersediaan layanan bagi penggunaannya. Sistem keamanan jaringan komputer harus dilindungi dari segala macam serangan dan usaha-usaha penyusupan atau pemindaian oleh pihak yang tidak berhak.
+
+&nbsp;&nbsp; &nbsp; Salah satu metode pengamanan sistem informasi yang umum diketahui oleh banyak orang adalah *password*. Tanpa disadari *password* mempunyai peranan penting dalam mengamankan informasi-informasi yang sifatnya pribadi. Pada beberapa aplikasi yang berhubungan dengan piranti lunak, seperti HP, kartu ATM, dll., ada juga sistem pengamanannya yang fungsinya mirip dengan *password*; biasa dikenal sebagai Kode PIN. Walaupun hanya terdiri dari angka, namun kegunaannya sama seperti *password*, yaitu untuk mengamankan informasi. Informasi yang disimpan tersebut biasanya sudah berbentuk digital.
+
+&nbsp;&nbsp; &nbsp; Tetapi banyak dari para pengguna *password* yang membuat *password* secara sembarangan tanpa mengetahui kebijakan pengamanan (*password policy*) dan bagaimana membuat *password* yang kuat (*strong password*). Mereka tidak sadar dengan bahayanya para ‘penyerang’ (*attacker*) yang dapat mencuri atau mengacak-acak informasi tersebut menggunakan tehnik - tehnik tertantu.
+
+&nbsp;&nbsp; &nbsp; Untuk itu, kami ingin membuktikan hal tersebut dengan melakukan penetrasi untuk mengetahui *password user* dengan cara melakukan tehnik *brute force* terhadap OS ubuntu server. Dalam hal ini, kami menggunakan *tools - tools* yang sudah ada yaitu THC-Hydra, Ncrack, dan Medusa.
+
 ##**Dasar Teori**
 
 &nbsp;&nbsp; &nbsp; Ubuntu server adalah salah satu varian dari distro linux Ubuntu. Ubuntu server adalah ubuntu yang didesain untuk di install di server. Perbedaan mendasar, di Ubuntu Server tidak tersedia GUI. Jika anda menggunakan ubuntu server artinya anda harus bekerja dengan perintah perintah di layar hitam ayng sering disebut konsole. Jika anda datang dari windows, maka tampilan ubuntu server seperti DOS. Ubuntu server menyediakan platform yang terintegrasi dengan baik yang akan memudahkan anda melakukan deploy server dengan fasilitas layanan internet standar: mail, web, DNS, file-serving hingga manajemen database. Sebagai turunan dari distribusi Debian, karakter alami Ubuntu server yang diwariskan dari Debian adalah faktor keamanan (security). Ubuntu server tidak membiarkan keberadaan port yang terbuka setelah proses instalasi, dan hanya akan memuat software-software yang esensial dan dibutuhkan untuk membangun sebuah sistem server yang aman.
