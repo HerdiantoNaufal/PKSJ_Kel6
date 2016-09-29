@@ -565,7 +565,7 @@ Proses selesai dan Kali Linux berhasil terpasang di VirtualBox
 
 ####**-- Hasil Uji Penetrasi dengan Ncrack**
 
-   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/hasil%20ncrack.PNG "Hasil Ncrack dengan fail2ban")
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/ncrack%20fail2ban.PNG "Hasil Ncrack dengan fail2ban")
    
    ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/ncrack%20fail2ban%20port%20baru.PNG "Hasil Ncrack dengan fail2ban port 22222")
 
