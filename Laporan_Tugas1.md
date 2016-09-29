@@ -477,6 +477,22 @@ Proses selesai dan Kali Linux berhasil terpasang di VirtualBox
 ####**-- Hasil Uji Penetrasi dengan Ncrack**
 
    ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/hasil%20ncrack.PNG "Hasil Ncrack")
+   
+
+###**- Langkah Uji Penetrasi dengan Medusa**
+
+1. Buat file dictionary untuk uji penetrasi.
+2. Pada terminal ketikkan "`nano pass.txt`".
+3. Isikan kemungkinan-kemungkinan password.
+4. Simpan file.
+   
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/dictionary%20password.PNG "Dictionary Password")
+   
+5. Untuk memulai uji penetrasi pada terminal ketikkan "`medusa -u ubuntu -P pass.txt -h 192.168.56.102 -M ssh`". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
+
+####**-- Hasil Uji Penetrasi dengan Medusa**
+
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/hasil%20medusa.PNG "Hasil Medusa")
 
 
 ##**Uji Penetrasi 2**
@@ -492,7 +508,11 @@ Proses selesai dan Kali Linux berhasil terpasang di VirtualBox
 
    ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/fail2ban%20setting%201.PNG "Config fail2ban")
    
-4. Restart fail2ban. Pada terminal server ketikkan "`sudo service fail2ban restart'".
+4. Konfigurasi fail2ban. Pada bagian "[ssh]" ganti nilai "port" menjadi "22222" agar fail2ban melindungi port 22222 karena ssh akan diset ke port 22222.
+
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/config%20fail2ban%20port.PNG "Config fail2ban")
+   
+5. Restart fail2ban. Pada terminal server ketikkan "`sudo service fail2ban restart'".
 
    ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/restart%20fail2ban.PNG "Restart fail2ban")
    
@@ -521,9 +541,13 @@ Proses selesai dan Kali Linux berhasil terpasang di VirtualBox
    
 5. Untuk memulai uji penetrasi pada terminal ketikkan "`hydra -l ubuntu -P pass.txt 192.168.56.102 ssh`". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
 
+6. Untuk memulai uji penetrasi pada port 22222 pada terminal ketikkan "`hydra -l ubuntu -P pass.txt 192.168.56.102 -s 22222 ssh`". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
+
 ####**-- Hasil Uji Penetrasi dengan Hydra**
 
    ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/hydra%20fail2ban.PNG "Hasil Hydra dengan fail2ban")
+   
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/hydra%20fail2ban%20port%20baru.PNG "Hasil Hydra dengan fail2ban port 22222")
 
 
 ###**- Langkah Uji Penetrasi dengan Ncrack**
@@ -537,10 +561,30 @@ Proses selesai dan Kali Linux berhasil terpasang di VirtualBox
    
 5. Untuk memulai uji penetrasi pada terminal ketikkan "`ncrack -v 192.168.56.102 --user ubuntu -P pass.txt -p ssh`". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
 
+6. Untuk memulai uji penetrasi pada port 22222 pada terminal ketikkan "`ncrack -v 192.168.56.102 --user ubuntu -P pass.txt -p ssh:22222`". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
+
 ####**-- Hasil Uji Penetrasi dengan Ncrack**
 
    ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/hasil%20ncrack.PNG "Hasil Ncrack dengan fail2ban")
+   
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/ncrack%20fail2ban%20port%20baru.PNG "Hasil Ncrack dengan fail2ban port 22222")
 
+
+###**- Langkah Uji Penetrasi dengan Medusa**
+
+1. Buat file dictionary untuk uji penetrasi.
+2. Pada terminal ketikkan "`nano pass.txt`".
+3. Isikan kemungkinan-kemungkinan password.
+4. Simpan file.
+   
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/dictionary%20password.PNG "Dictionary Password")
+
+5. Untuk memulai uji penetrasi pada terminal ketikkan "`medusa -u ubuntu -P pass.txt -h 192.168.56.102 -n 22222 -M ssh`". Dengan asumsi kita sudah mengetahui nama user (ubuntu) dan ip addressnya "192.168.56.192".
+
+####**-- Hasil Uji Penetrasi dengan Medusa**
+   
+   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/medusa%20fail2ban%20port%20baru.PNG "Hasil medusa dengan fail2ban port 22222")
+   
 
 ##**- Kesimpulan dan Saran**
 
