@@ -253,8 +253,6 @@
 
 ###**- Instalasi Kali Linux**
 
-# Instalasi Kali Linux 
-
 Cara instal Kali Linux dalam VirtualBox adalah sebagai berikut:
 
 Siapkan berkas instalasi VirtualBox dan disc Kali Linux ( ex. dalam bentuk *.iso) yang sesuai dengan platform komputer/laptop.
