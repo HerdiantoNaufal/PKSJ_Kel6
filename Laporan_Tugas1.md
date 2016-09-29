@@ -28,27 +28,27 @@
 
 3. Klik Baru, maka nanti akan muncul layar kerja baru. Untuk kotak Nama isikan sesuai dengan yang diinginkan. Untuk kotak Type, pilihlah OS yang akan diinstal nantinya, selanjutnya dikotak Versi, pilihlah versi OS yang ingin diinstal. Setelah semuanya selesai dibuat klik Lanjut. 
 
-   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Instalasi%2520Ubuntu%2520Server/1.png "")
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Instalasi%20Ubuntu%20Server/1.png "")
 
 4. Selanjutnya atur berapa kapasitas memory yang akan digunakan untuk menjalankan proses yang ada di aplikasi ini. Setelah selesai klik Lanjut. 
 
-  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Instalasi%2520Ubuntu%2520Server/2.PNG "")
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Instalasi%20Ubuntu%20Server/2.PNG "")
 
 5. Selanjutnya adalah membuat harddisk virtual. Klik Buat untuk melanjutkan.
 
-  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Instalasi%2520Ubuntu%2520Server/3.PNG "")
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Instalasi%20Ubuntu%20Server/3.PNG "")
 
 6. Klik Lanjut saja.
 
-  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Instalasi%2520Ubuntu%2520Server/4.PNG "")
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Instalasi%20Ubuntu%20Server/4.PNG "")
   
 7. Klik Lanjut.
 
-  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Instalasi%2520Ubuntu%2520Server/5.PNG "")
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Instalasi%20Ubuntu%20Server/5.PNG "")
 
 8. Selanjutnya tentukan berapa kapasitas harddisk virtual yang akan digunakan untuk melakukan penginstalan nantinya. Klik Buat.
 
-  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Instalasi%2520Ubuntu%2520Server/6.PNG "")
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Instalasi%20Ubuntu%20Server/6.PNG "")
   
 9. Klik Mulai pada menu pilihan di VirtualBox untuk memulai penginstalan Ubuntu Server.
 
