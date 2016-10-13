@@ -190,3 +190,96 @@ sudo apt-get install php5-gd libssh2-php
   
   
   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/install%20plugin%20player1.PNG "")
+
+
+##**Uji Penetrasi**
+
+###**-WPSscan.**
+
+####**-WPscan, Mencari Vulnerable Plugin.**
+
+&nbsp; Pada terminal ketikkan "`wpscan --url http://192.168.56.102`"
+
+&nbsp; "`192.168.56.102`" merupakan alamat dari server wordpress yang akan diserang.
+
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/wpscan.PNG "")
+  
+&nbsp; Setelah itu WPscan akan menampilkan vulnerable plugin yang terinstall di wordpress. WPscan juga menampilkan link yang berisi penjelasan vulnerable plugin dan cara untuk mengeksploitasinya.
+
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/wpscan.PNG "")
+  
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/hasil%20wpscan1.PNG "")
+  
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/hasil%20wpscan2.PNG "")
+
+
+####**-WPSscan, Brute Force Halaman Admin.**
+
+&nbsp; Pada terminal ketikkan "`wpscan --url 192.168.56.102 --enumerate u`" untuk menampilkan daftar user.
+
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/hek%20wpscan%20enum%20u.PNG "")
+  
+&nbsp; Setelah user diketahui jalankan brute force attack dengan cara "`wpscan --url 192.168.56.102 --wordlist /root/pass.txt --username admin`". Perintah tersebut akan menyerang server dengan mengetahui bahwa ada user yang bernama "admin"
+
+&nbsp; Hasil brute force:
+
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/hek%20wpscan%20brute.PNG "")
+
+
+###**-SQLMap.**
+
+####**-League Manager 3.9.11.**
+
+&nbsp; League Manager mempuntai celah yang dapat di eksploitasi sehingga kita bisa melakukan SQL Injection
+
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/hek%20league1.PNG "")
+  
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/hek%20league2.PNG "")
+  
+&nbsp; Pada terminal, ketikkan "`sqlmap --rul "http://192.168.56.102?season1&league_id=1&match=1&team_id=1" --dbms mysql --level 5 --risk 3 -p league_id --dbs --table`"
+
+&nbsp; SQLMap akan mencoba meng-inject server lalu menampilkan informasi-informasi terkait server tersebut, seperti OS, web application apa yang digunakan, dan DBMS server tersebut. SQLMap juga dapat menampilkan database apa saja yang ada di server tersebut dengan menambahkan perintah "`--dbs`", SQLMap juga dapat menampilkan tabel-tabel yang ada di database tersebut dengan menambahkan perintah "`--tables`"
+
+&nbsp; Hasil SQLMap:
+
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/hasil%20sqlmap%20league1.PNG "")
+  
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/hasil%20sqlmap%20league2.PNG "")
+  
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/hasil%20sqlmap%20league2.PNG "")
+
+
+####**-Survey and Poll.**
+
+&nbsp; Survey and Poll juga memiliki celah yang dapat dieksploitasi seperti League Manager. Pada terminal ketikkan perintah seperti yang dibawah ini:
+
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/sqlmap%20survey%20poll.PNG "")
+  
+  
+###**-Video Player 1.15.16.**
+
+&nbsp; Video Player juga memiliki celah SQL Injection
+
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/hek%20video%20player1.PNG "")
+  
+&nbsp; Buat file html seperti gambar diatas. Celah SQL Injection terdapat pada form dengan key "order_by".
+
+&nbsp; Hasil SQL Injection:
+  
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/hek%20video%20player12.PNG "")
+
+
+##**Kesimpulan dan Saran**
+
+###**-Kesimpulan.**
+
+&nbsp; Plugin dan wordpress versi lama memiliki celah keamanan.
+
+&nbsp; Celah-celah keamanan sudah banyak ditemukan dan didokumentasikan.
+
+
+###**-Saran.**
+
+&nbsp; Selalu update wordpress dan plugin-pluginnya. Jangan lupa cek celah plugin-plugin tersebut. Jika celah keamanan telah ditemukan gantilah plugin tersebut dengan plugin yang lain.
+
+&nbsp; Buatlah username dan password yang sulit untuk halaman admin agar tidak terkena serangan brute force.
