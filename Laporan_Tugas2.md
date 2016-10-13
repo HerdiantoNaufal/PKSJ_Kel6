@@ -36,6 +36,10 @@
 #### -SQLMap
 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;SQLMap adalah tool open source yang di jalankan menggunakan command dan support untuk data base MySQL, Oracle, PostgreSQL, Microsoft SQL Server, Microsoft Access, IBM DB2, SQLite, Firebird, Sybase and SAP MaxDB.
 
+#### -Survey and Poll
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Survey and Poll merupakan plugin yang menyediakan berbagai macam pilihan untuk mendapatkan informasi apapun dan menampilkannya dengan mengesankan, grafik animasi. Semua jajak pendapat anonim, tidak perlu login untuk mengisi, karena plugin menggunakan cookies untuk menghindari duplikasi.
+
+
 ##**Instalasi**
 
 ###**-Instalasi Wordpress.**
