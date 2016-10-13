@@ -157,3 +157,32 @@
 &nbsp; WordPress akan konfirmasi instalasi dan meminta anda login ke akun yang telah anda buat
 
   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/install%20wordpress%20web-1.PNG "")
+  
+###**-Instalasi Plugin.**
+
+&nbsp; 1. Download plugin yang ingin ditambahkan ke wordpress.
+
+&nbsp; 2. Pada wordpress, klik menu plugins.
+
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/install%20plugin.PNG "")
+  
+&nbsp; 3. Pilih Add New.
+
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/install%20plugin1.PNG "")
+  
+&nbsp; 4. Pilih upload plugin.
+
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/install%20plugin2.PNG "")
+  
+&nbsp; 5. Dibawah ini contoh gambar add plugin ke wordpress.
+
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/install%20plugin%20league.PNG "")
+  
+  
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/install%20plugin%20league1.PNG "")
+  
+  
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/install%20plugin%20player.PNG "")
+  
+  
+  ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/install%20plugin%20player1.PNG "")
