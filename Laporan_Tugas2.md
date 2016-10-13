@@ -42,9 +42,11 @@
 
 &nbsp; 1. Install Apache dengan perintah:
 
-> sudo apt-get update
+~~~~
+sudo apt-get update
 
-> sudo apt-get install apache2
+sudo apt-get install apache2
+~~~~
 
   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/setelah%20install%20apache2.PNG "")
 
@@ -116,9 +118,11 @@
 
 &nbsp; Beberapa package yang perlu diinstall agar wordpress berkerja dengan images, install plugin dan update website dengan login SSH, maka kita ketikkan perintah:
 
-> sudo apt-get update
+~~~~
+sudo apt-get update
 
-> sudo apt-get install php5-gd libssh2-php
+sudo apt-get install php5-gd libssh2-php
+~~~~
 
   ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/foto/install%20php5-gd.PNG "")
 
