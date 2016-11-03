@@ -356,3 +356,10 @@ Saya mendorong Anda untuk mencoba dan menginstal Cuckoo, karena proses ini cukup
 ##### Referensi
 [1] Instalasi Cuckoo, http://docs.cuckoosandbox.org/en/latest/installation/.
 
+## Analisis Malware
+
+Kita akan menganalisis 3 malware yang sudah didapatkan dengan cara submit ke alamat localhost:8000. Malware yang akan dianalisis antara lain :
+- bad.pdf
+- PO.pdf
+- Tax invoice - INV 400093889265.pdf
+
