@@ -358,8 +358,73 @@ Saya mendorong Anda untuk mencoba dan menginstal Cuckoo, karena proses ini cukup
 
 ## Analisis Malware
 
-Kita akan menganalisis 3 malware yang sudah didapatkan dengan cara submit ke alamat localhost:8000. Malware yang akan dianalisis antara lain :
+Kita akan menganalisis 3 malware pdf yang sudah didapatkan dengan cara submit ke alamat localhost:8000. Malware yang akan dianalisis antara lain :
 - bad.pdf
 - PO.pdf
 - Tax invoice - INV 400093889265.pdf
 
+Pilih file yang akan di submit pada alamat localhost:8000
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/localhost.PNG  "")
+
+Hasil report analisis yang pernah dilakukan
+
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/hasil%20report.PNG  "")
+
+#### - Hasil Analisa Malware bad.pdf
+
+Malware ini membuka file dan juga menulis sebuah file seperti gambar dibawah:
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/file%20bad%20pdf.PNG  "")
+
+Malware ini juga membuka dan mengubah registry seperti gambar dibawah:
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/registry%20bad%20pdf.PNG  "")
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/registry2%20bad%20pdf.PNG  "")
+
+Malware ini membuat beberapa direktori seperti gambar dibawah:
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/direktori%20bad%20pdf.PNG  "")
+
+Malware ini melakukan proses seperti gambar dibawah:
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/proses%20bad%20pdf.PNG  "")
+
+#### - Hasil Analisa Malware PO.pdf
+
+Malware ini membuka file dan juga menulis sebuah file seperti gambar dibawah:
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/file%20po%20pdf.PNG  "")
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/file2%20po%20pdf.PNG  "")
+
+Malware ini hanya membuka registry saja, tidak sampai merubah seperti malware sebelumnya. Gambarnya seperti dibawah ini:
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/registry%20po%20pdf.PNG  "")
+
+Malware ini melakukan proses seperti gambar dibawah:
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/proses%20po%20pdf.PNG  "")
+
+#### - Hasil Analisa Malware Tax invoice - INV 400093889265.pdf
+
+Malware ini membuka file dan juga menulis sebuah file seperti gambar dibawah:
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/file%20tax%20pdf.PNG  "")
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/file2%20tax%20pdf.PNG  "")
+
+Sama dengan malware PO.pdf, malware ini hanya membuka registry saja, tidak sampai merubah registrinya. Gambarnya seperti dibawah ini:
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/registry%20tax%20pdf.PNG  "")
+
+Malware ini melakukan proses seperti gambar dibawah:
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/proses%20tax%20pdf.PNG  "")
+
+## Kesimpulan dan Saran
+1. Untuk menghindari serangan malware, sebaiknya kita selalu melakukan update terhadap OS kita maupun software - software yang ada didalamnya. Hal ini dilakukan untuk mencegah serangan malware menyusup ke dalam OS dan software kita.
+2. Install Antivirus untuk memproteksi komputer atau laptop kita dari serangan malware. Kita juga harus selalu melakukan update terhadap antivirus secara berkala.
+3. Sebaiknya kita lebih berhati - hati saat membuka file dikarenakan saat ini malware sudah semakin beragam jenisnya dan memiliki ekstensi yang bervariasi.
