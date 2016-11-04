@@ -406,3 +406,4 @@ Malware ini melakukan proses seperti gambar dibawah:
 1. Untuk menghindari serangan malware, sebaiknya kita selalu melakukan update terhadap OS kita maupun software - software yang ada didalamnya. Hal ini dilakukan untuk mencegah serangan malware menyusup ke dalam OS dan software kita.
 2. Install Antivirus untuk memproteksi komputer atau laptop kita dari serangan malware. Kita juga harus selalu melakukan update terhadap antivirus secara berkala.
 3. Sebaiknya kita lebih berhati - hati saat membuka file dikarenakan saat ini malware sudah semakin beragam jenisnya dan memiliki ekstensi yang bervariasi.
+4. Jika ingin melakukan analisis malware sebaiknya di lakukan di environment yang terkontrol seperti pada virtual machine.
