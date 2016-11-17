@@ -92,9 +92,9 @@ sudo glastopf-runner
 ## Kesimpulan dan Saran
 
 ### Kesimpulan
-&nbsp; * Tools-tools honeypot dapat digunakan mendeteksi serangan.
-&nbsp; * Tools-tools penetrasi tidak dapat membedakan mana yang server honeypot atau bukan.
+* Tools-tools honeypot dapat digunakan mendeteksi serangan.
+* Tools-tools penetrasi tidak dapat membedakan mana yang server honeypot atau bukan.
 
 ### Saran
-&nbsp; * Untuk memancing hacker dapat menggunakan honeypot.
-&nbsp; * Tools-tools penetrasi dapat digunakan untuk menguji keamanan sebuah sistem.
+* Untuk memancing hacker dapat menggunakan honeypot.
+* Tools-tools penetrasi dapat digunakan untuk menguji keamanan sebuah sistem.
