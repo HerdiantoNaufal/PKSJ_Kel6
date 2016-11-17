@@ -64,6 +64,10 @@ sudo glastopf-runner
 ```
 sudo glastopf-runner
 ```
+Jika honeypot berhasil jalan, maka akan menampilkan hasil seperti dibawah ini:
+
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/glastopf%20running.PNG "")
+
 
 ## Uji Penetrasi Web Honeypot Glastopf
 
