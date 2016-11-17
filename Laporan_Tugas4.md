@@ -2,6 +2,9 @@
 
 ## Pendahuluan
 
+&nbsp; Belakangan ini tengah marak hacking pada web. dimana hacker menyerang sistem web dengan cara mencari celah yang bisa ditembus. oleh karena itu untuk mengamankan sistem kita, honeypot salah satu tools yang dapat kita digunakan. sistem kerja honeypot sendiri dengan cara menjebak sang hacker dan kita bisa memantau gerak-gerik maupun apa yang diinginkan hacker. laporan ini berisi bagaimana cara instalasi dan penggunaan dari honeypot beserta hasil uji nya.
+
+
 ## Dasar Teori
 
 &nbsp; 1. Honeypot adalah sebuah sistem palsu yang dirancang untuk menjebak penyerang, seolah-olah yang diserang adalah sistem yang asli
