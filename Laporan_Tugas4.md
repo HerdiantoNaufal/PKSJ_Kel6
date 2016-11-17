@@ -4,6 +4,10 @@
 
 ## Dasar Teori
 
+&nbsp; 1. Honeypot adalah sebuah sistem palsu yang dirancang untuk menjebak penyerang, seolah-olah yang diserang adalah sistem yang asli
+
+&nbsp; 2. Glastopf adalah *low interaction web application* honeypot yang memiliki kemampuan untuk mengemulasikan tibuan *vulnerabilities* untuk mengumpulkan data dari serangan yang ditujukan ke aplikasi web. Prinsip dasar dari kerja Glastopf adalah membalas serangan dengan memberikan jawaban sesuai dengan tujuan penyerang menyerang aplikasi web. Glastopf menyediakan *vulnerability* emulator yang membuat Glastopf dapat membalas semua serangan tanpa harus memodifikasi template aplikasi web.
+
 ## Instalasi Glastopf
 
 &nbsp; 1. Install dependencies
@@ -17,7 +21,7 @@ sudo apt-get install libxml2-dev libxslt-dev
 sudo pip install --upgrade distribute
 ```
 
-&nbsp; 2. Install dan Konfigurasi PHP Sandbox
+&nbsp; 2. Install dan konfigurasi PHP sandbox
 ```
 cd /opt
 sudo git clone git://github.com/mushorg/BFR.git
