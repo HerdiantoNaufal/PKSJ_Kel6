@@ -74,7 +74,7 @@ sudo mkdir honeeyphot
 cd honeeyphot
 sudo glastopf-runner
 ```
-&nbsp; Hasil pada terminal bil glastopf berjalan
+&nbsp; Hasil pada terminal bila glastopf berjalan
 ![alt text](https://raw.githubusercontent.com/HerdiantoNaufal/PKSJ_Kel6/master/Gambar/glastopf%20running.PNG "")
 
 &nbsp; 2. Jalankan ZAP Proxy dari Kali Linux. Lalu masukkan ip server honeypot pada form yang ada.
@@ -92,5 +92,9 @@ sudo glastopf-runner
 ## Kesimpulan dan Saran
 
 ### Kesimpulan
+&nbsp; * Tools-tools honeypot dapat digunakan mendeteksi serangan.
+&nbsp; * Tools-tools penetrasi tidak dapat membedakan mana yang server honeypot atau bukan.
 
 ### Saran
+&nbsp; * Untuk memancing hacker dapat menggunakan honeypot.
+&nbsp; * Tools-tools penetrasi dapat digunakan untuk menguji keamanan sebuah sistem.
