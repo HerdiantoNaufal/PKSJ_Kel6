@@ -67,4 +67,30 @@ sudo glastopf-runner
 
 ## Uji Penetrasi Web Honeypot Glastopf
 
+&nbsp; 1. Jalankan glastopf. Masuk ke folder honeypot lalu jalankan glastopf
+```
+cd /opt
+sudo mkdir honeeyphot
+cd honeeyphot
+sudo glastopf-runner
+```
+&nbsp; Hasil pada terminal bil glastopf berjalan
+![alt text](https://raw.githubusercontent.com/HerdiantoNaufal/PKSJ_Kel6/master/Gambar/glastopf%20running.PNG "")
+
+&nbsp; 2. Jalankan ZAP Proxy dari Kali Linux. Lalu masukkan ip server honeypot pada form yang ada.
+![alt text](https://raw.githubusercontent.com/HerdiantoNaufal/PKSJ_Kel6/master/Gambar/zap%20attack.PNG "")
+
+&nbsp; Setelah itu ZAP Proxy akan meluncurkan "Spider" untuk memeriksa direktori pada server honeypot. Setelah itu ZAP Proxy akan mencoba menyerang server honepot. Hasil uji serang penetrasi:
+![alt text](https://raw.githubusercontent.com/HerdiantoNaufal/PKSJ_Kel6/master/Gambar/zap%20hasil.png "")
+&nbsp; Dapat dilihat bahwa server memiliki 10 jenis celah keamanan.
+
+&nbsp; Pada server, dapat dilihat log dari honeypot.
+![alt text](https://raw.githubusercontent.com/HerdiantoNaufal/PKSJ_Kel6/master/Gambar/log%20glastopf.PNG "")
+&nbsp; Dapat dilihat bahwa server honeypot banyak sekali diakses oleh satu alamat.
+
+
 ## Kesimpulan dan Saran
+
+### Kesimpulan
+
+### Saran
