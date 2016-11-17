@@ -4,12 +4,13 @@
 
 &nbsp; Belakangan ini tengah marak hacking pada web. dimana hacker menyerang sistem web dengan cara mencari celah yang bisa ditembus. oleh karena itu untuk mengamankan sistem kita, honeypot salah satu tools yang dapat kita digunakan. sistem kerja honeypot sendiri dengan cara menjebak sang hacker dan kita bisa memantau gerak-gerik maupun apa yang diinginkan hacker. laporan ini berisi bagaimana cara instalasi dan penggunaan dari honeypot beserta hasil uji nya.
 
-
 ## Dasar Teori
 
 &nbsp; 1. Honeypot adalah sebuah sistem palsu yang dirancang untuk menjebak penyerang, seolah-olah yang diserang adalah sistem yang asli
 
 &nbsp; 2. Glastopf adalah *low interaction web application* honeypot yang memiliki kemampuan untuk mengemulasikan tibuan *vulnerabilities* untuk mengumpulkan data dari serangan yang ditujukan ke aplikasi web. Prinsip dasar dari kerja Glastopf adalah membalas serangan dengan memberikan jawaban sesuai dengan tujuan penyerang menyerang aplikasi web. Glastopf menyediakan *vulnerability* emulator yang membuat Glastopf dapat membalas semua serangan tanpa harus memodifikasi template aplikasi web.
+
+&nbsp; 3. ZAP Proxy adalah tools untuk pengujian penetrasi yang mudah digunakan dalam menemukan celah pada aplikasi web. Hal ini dirancang untuk digunakan oleh orang - orang dengan berbagai pengalaman keamanan dan dengan demikian sangat ideal untuk pada pengembang dan pentester yang baru untuk melakukan kegiatan pentest. ZAP menyediakan scanner otomatis serta satu set alat yang memungkinkan untuk menemukan kerentanan keamanan website secara manual.
 
 ## Instalasi Glastopf
 
