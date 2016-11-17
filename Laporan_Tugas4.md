@@ -92,6 +92,24 @@ sudo glastopf-runner
 ![alt text](https://raw.githubusercontent.com/HerdiantoNaufal/PKSJ_Kel6/master/Gambar/log%20glastopf.PNG "")
 &nbsp; Dapat dilihat bahwa server honeypot banyak sekali diakses oleh satu alamat.
 
+### Hasil Penetrasi
+
+* Cross Site Scripting
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/cross%20glastopf.PNG "")
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/cross%20zap.PNG "")
+
+* Path Traversal
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/path%20glastopf.PNG "")
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/path%20zap.PNG "")
+
+* SQL Injection-Oracle
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/oracle%20glastopf.PNG "")
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/oracle%20zap.PNG "")
+
+* SQL Injection
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/sql%20glastopf.PNG "")
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/sql%20zap.PNG "")
+
 
 ## Kesimpulan dan Saran
 
