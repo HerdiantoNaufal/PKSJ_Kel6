@@ -2,13 +2,11 @@
 
 ## Pendahuluan
 
-&nbsp;&nbsp;&nbsp; Komputer sebagai perangkat yang sering digunakan untuk memudahkan pekerjaan manusia di berbagai bidang membuat perangkat ini dimiliki oleh setiap orang. Sistem operasi yang mengendalikan dan mengkoordinasikan semua perangkat keras yang bekerja di komputer menjadikan munculnya berbagai tipe sistem operasi yang berkembang di pasaran, dimulai dari sistem operasi yang berbayar seperti Windows hingga yang gratis atau open sourceseperti Linux.
+&nbsp;&nbsp;&nbsp; Komputer sebagai perangkat yang sering digunakan untuk memudahkan pekerjaan manusia di berbagai bidang membuat perangkat ini dimiliki oleh setiap orang. Sistem operasi yang mengendalikan dan mengkoordinasikan semua perangkat keras yang bekerja di komputer menjadikan munculnya berbagai tipe sistem operasi yang berkembang di pasaran, dimulai dari sistem operasi yang berbayar seperti Windows hingga yang gratis atau open source seperti Linux.
 
 &nbsp;&nbsp;&nbsp; Sistem operasi yang berkembang saat ini selalu mengalami pembaharuan untuk meningkatkan kinerja serta kualitas yang dimilikinya. Perkembangan sistem operasi yang berbasis graphic user interface seperti Windows lebih banyak digunakan dibandingkan dengan sistem operasi yang harus mengandalkan command seperti Linux. Versi Windows yang banyak mengalami penyempurnaan akan tetapi masih terdapat celah keamanan yang dapat dieksploitasi dengan berbagai cara yang mengakibatkan komputer dapat dieksploitasi dan dimanfaatkan oleh orang yang tidak memiliki hak akses ke dalam sebuah sistem.
 
 &nbsp;&nbsp;&nbsp; Untuk mengetahui celah keamanan tersebut perlu adanya pengujian atau penetrasi untuk menguji dan mencari celah keamanan apa saja yang dapat dieksploitasi di sistem operasi Windows yang baru diinstal yang dapat digunakan untuk masuk ke dalam sebuah sistem tanpa memiliki hak akses.
-
-&nbsp; Pengujian ini menggunakan softwareMetasploit Framework yang berfungsi untuk melakukan penetrasi ke sistem operasi Windows untuk mencari kelemahan dan celah keamanan yang dapat dieksploitasi serta mencari solusi untuk mengatasi kekurangan tersebut.
 
 ## Instalasi
 
