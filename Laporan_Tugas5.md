@@ -8,6 +8,14 @@
 
 &nbsp;&nbsp;&nbsp; Untuk mengetahui celah keamanan tersebut perlu adanya pengujian atau penetrasi untuk menguji dan mencari celah keamanan apa saja yang dapat dieksploitasi di sistem operasi yang dapat digunakan untuk masuk ke dalam sebuah sistem tanpa memiliki hak akses.
 
+## Dasar Teori
+
+### Metasploitable
+&nbsp;&nbsp;&nbsp; Metasploitable adalah mesin secara sengaja rentan virtual Linux. VM ini dapat digunakan untuk melakukan pelatihan keamanan, alat tes keamanan, dan praktek penetrasi Versi pengujian umum teknik ini 2 dari mesin virtual yang tersedia untuk di-download dari Sourceforge dan kapal dengan kerentanan bahkan lebih dari gambar asli.
+
+### Kali Linux
+&nbsp;&nbsp;&nbsp; Kali Linux merupakan pembangunan kembali BackTrack Linux secara sempurna,  mengikuti sepenuhnya kepada standar pengembangan Debian. Semua infrastruktur baru telah dimasukkan ke dalam satu tempat, semua tools telah direview dan dikemas, dan kami menggunakan Git untuk VCS nya.
+
 ## Instalasi
 
 ### -Instalasi Metasploitable pada Virtual Box
@@ -15,7 +23,7 @@
 
 
 1. Download dan install Virtual Box pada komputer anda.
-1. Setelah instalasi selesai, buka Virtual Box dan klik "New".
+2. Setelah instalasi selesai, buka Virtual Box dan klik "New".
 
 ![alt text](https://scontent-sit4-1.xx.fbcdn.net/v/t34.0-12/15356755_1380978318593630_3194431754367144286_n.jpg?oh=f087713c84352ad23b6478a8493fe365&oe=5849DC89 "")
 
