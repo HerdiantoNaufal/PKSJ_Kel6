@@ -389,3 +389,6 @@ Pada terminal masukkan:
 ![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/ircd_7.PNG "")
 
 8. Sama seperti sebelumnya, kita akan melakukan decrypt dengan bantuan tool John de Ripper untuk mendapatkan username dan password target dengan cara mengetikkan perintah: `./john [Lokasi_File_Hashdump]`.
+
+## Kesimpulan dan Saran
+* Metasploitable dapat digunakan untuk latihan keamanan, testing tools keamanan, dan latihan uji penetrasi
